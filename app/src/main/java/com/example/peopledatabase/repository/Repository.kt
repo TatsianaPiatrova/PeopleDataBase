@@ -23,10 +23,9 @@ class Repository private constructor(val context: Context){
     private var cardDao: CardDao = database.cardDao()
         get(){
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
-            //val dataSource = sharedPreferences.getBoolean("switch",true)
-            return database.cardDao()
-            /*if(dataSource) database.CardDao() else
-                CarDatabaseCursor(context)*/
+            val dataSource = sharedPreferences.getBoolean("switch",true)
+            return if(dataSource) database.cardDao() else
+                CardDataCursor(context)
         }
 
 

@@ -6,4 +6,8 @@
         android:key="sort_by"
         android:summary="Select order"
         android:title="SORT SETTINGS" />
+    <SwitchPreference
+        android:key="switch"
+        android:title="Switch Cursor/Room"
+        android:defaultValue="false"/>
 </PreferenceScreen>
