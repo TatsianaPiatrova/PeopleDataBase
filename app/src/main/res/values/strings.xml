@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PeopleDatabase</string>
+    <string-array name="sort_headings">
+        <item>Name</item>
+        <item>Age</item>
+    </string-array>
+    <string-array name="sort_values">
+        <item>name</item>
+        <item>age</item>
+    </string-array>
+</resources>
