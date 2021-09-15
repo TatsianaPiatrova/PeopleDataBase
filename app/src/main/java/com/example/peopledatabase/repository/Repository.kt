@@ -1,5 +1,6 @@
 package com.example.peopledatabase.repository
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.preference.PreferenceManager
 import androidx.lifecycle.LiveData
@@ -20,7 +21,7 @@ class Repository private constructor(val context: Context){
         ).build()
 
 
-    private var cardDao: CardDao = database.cardDao()
+    private val cardDao: CardDao
         get(){
             val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context)
             val dataSource = sharedPreferences.getBoolean("switch",true)
@@ -42,7 +43,6 @@ class Repository private constructor(val context: Context){
     }
 
     fun deleteCard(card:Card){
-
         executor.execute{
             cardDao.delete(card)
         }
@@ -55,6 +55,7 @@ class Repository private constructor(val context: Context){
     }
 
     companion object{
+        @SuppressLint("StaticFieldLeak")
         private  var INSTANCE: Repository? = null
 
         fun initialize(context: Context){

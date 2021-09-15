@@ -9,7 +9,6 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.liveData
-import androidx.sqlite.db.SupportSQLiteQuery
 import com.example.peopledatabase.repository.db.Card
 import com.example.peopledatabase.repository.db.CardDao
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +65,7 @@ class CardDataCursor(context: Context) :
 
     override fun getCardsOrderBy(order: String): LiveData<List<Card>> {
         Log.d(LOG_TAG, "Cursor getCardsOrderBy($order)")
-        return liveData<List<Card>> {
+        return liveData {
             emit(getCardsList(order))
         }
     }

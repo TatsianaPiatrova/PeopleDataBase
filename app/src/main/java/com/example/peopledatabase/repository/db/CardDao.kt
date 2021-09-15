@@ -2,8 +2,6 @@ package com.example.peopledatabase.repository.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import androidx.sqlite.db.SimpleSQLiteQuery
-import androidx.sqlite.db.SupportSQLiteQuery
 
 @Dao
 interface CardDao {

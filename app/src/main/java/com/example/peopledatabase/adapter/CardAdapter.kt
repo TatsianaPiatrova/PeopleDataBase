@@ -13,7 +13,7 @@ class CardAdapter(private val itemClickListener: ItemClickListener) : ListAdapte
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val binding = FragmentItemBinding.inflate(layoutInflater, parent, false)
-        return CardHolder(itemClickListener, binding, binding.root.context.resources)
+        return CardHolder(itemClickListener, binding)
     }
 
     override fun onBindViewHolder(holder: CardHolder, position: Int) {

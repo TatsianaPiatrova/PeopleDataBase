@@ -1,6 +1,5 @@
 package com.example.peopledatabase.adapter
 
-import android.content.res.Resources
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.peopledatabase.ItemClickListener
@@ -9,8 +8,7 @@ import com.example.peopledatabase.repository.db.Card
 
 class CardHolder(
     private val itemClickListener: ItemClickListener,
-    private val binding: FragmentItemBinding,
-    private val resources: Resources
+    binding: FragmentItemBinding
 
 ) : RecyclerView.ViewHolder(binding.root) {
     private var card: Card? = null
